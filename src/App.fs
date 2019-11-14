@@ -31,7 +31,7 @@ let render (state: State) (dispatch: Msg -> unit) =
 
     Html.button [
       prop.onClick (fun _ -> dispatch Decrement)
-      prop.text "Decrement"
+      prop.text "Decredwddddddddddddddddment"
     ]
 
     Html.h1 state.Count

@@ -1,0 +1,4 @@
+source https://www.nuget.org/api/v2
+nuget Fable.Elmish.React 3.0.1
+nuget Feliz 0.52.0
+nuget FSharp.Core
