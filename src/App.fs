@@ -80,19 +80,39 @@ let renderNavBar2 =
 let renderTitle =
   Html.div [
     prop.classes ["hero"; "is-medium"]
+    // prop.style [ style.backgroundColor "grey"]
     prop.children [
       Html.div [
         prop.classes ["hero-body"]
         prop.children [ 
           Html.div [
+            prop.classes ["columns"]
             prop.children [
-              Html.h1 [
-                prop.classes [ "title" ] 
-                prop.text "Akasha vejleder og healer"
+              Html.div [
+                prop.classes ["column"]
+                prop.children [
+                  Html.h1 [
+                    prop.classes [ "title" ] 
+                    prop.text "Akasha vejleder og healer"
+                  ]
+                  Html.h2 [
+                    prop.classes [ "Subtitle" ] 
+                    prop.text "Laura Engelsen"
+                  ]
+                  Html.p [
+                    prop.text "Jeg hedder laura og jeg er.....  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                  ]
+                ]
               ]
-              Html.h2 [
-                prop.classes [ "Subtitle" ] 
-                prop.text "Laura Engelsen"
+              Html.div [
+                prop.classes ["column"]
+                prop.children [
+                  Html.img [
+                    // prop.classes ["image"; "is-128x128"]
+                    // prop.style [ style.fl "right" ]
+                    prop.src "laura_tmp.png"
+                  ]
+                ]
               ]
             ]
           ]
