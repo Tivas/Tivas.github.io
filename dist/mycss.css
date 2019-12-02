@@ -5,22 +5,22 @@
 }
 
 body {
-    /* background-image: url(spiritual1.jpg); */
-    background-image: url(pendulum.jpeg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: right top;
+    background: #fcecfc; 
+    background: -moz-linear-gradient(-45deg,  #fcecfc 0%, #fd89d7 81%, #ff7cd8 100%);
+    background: -webkit-linear-gradient(-45deg,  #fcecfc 0%,#fd89d7 81%,#ff7cd8 100%);
+    background: linear-gradient(135deg,  #fcecfc 0%,#fd89d7 81%,#ff7cd8 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcecfc', endColorstr='#ff7cd8',GradientType=1 ); 
+}
+
+#mainDiv {
+   /* background-image: url(spiritual1.jpg); */
+   background-image: url(pendulum_transparant.png);
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-position: right top;
 }
 
 html {
     height: 100%;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: 
-        [xl-start] 1fr 1.5rem [md-start] minmax(0,624px) [md-end] 1.5rem 1fr [xl-end];
-}
-
-.grid * {grid-column: md;}
-.grid-xl {grid-column: xl;}
