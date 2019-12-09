@@ -26,19 +26,11 @@ let renderNavBar =
         prop.children [
           Html.a [ 
             prop.classes ["navbar-item"]
-            prop.text "Link 1" 
+            prop.text "Forside" 
           ]
           Html.a [ 
             prop.classes ["navbar-item"]
-            prop.text "Link 2" 
-          ]
-          Html.a [ 
-            prop.classes ["navbar-item"]
-            prop.text "Link 3" 
-          ]
-          Html.a [ 
-            prop.classes ["navbar-item"]
-            prop.text "Link 4" 
+            prop.text "Priser og Kontakt" 
           ]
         ]
       ]
@@ -74,20 +66,22 @@ let renderNavBar2 =
         ]
       ]
     ]
-
   ]
 
 let renderTitle =
   Html.div [
     prop.classes ["hero"; "is-medium"]
-    // prop.style [ style.backgroundColor "grey"]
     prop.children [
       Html.div [
-        prop.classes ["hero-body"; "center"]
-        // prop.style [ style.backgroundColor "pink"]
+        // prop.classes ["hero-body"; "center"]
+        prop.classes ["hero-body";"textCenter"]
         prop.children [ 
           Html.h1 [
-            prop.text "Overskrift"
+            prop.style [ style.fontSize 50  ]
+            prop.text "Laura Engelsen"
+          ]
+          Html.h2 [
+            prop.text "Akasha vejleder og healer"
           ]
         ]
       ]
@@ -97,8 +91,7 @@ let renderTitle =
 
 let renderDescription =
   Html.div [
-    prop.classes ["hero"; "is-medium"]
-    // prop.style [ style.backgroundColor "grey"]
+    prop.classes ["hero"; "is-small"]
     prop.children [
       Html.div [
         prop.classes ["hero-body"]
@@ -111,7 +104,7 @@ let renderDescription =
                 prop.children [
                   Html.h1 [
                     prop.classes [ "title" ] 
-                    prop.text "Akasha vejleder og healer"
+                    prop.text "Akasha"
                   ]
                   Html.h2 [
                     prop.classes [ "Subtitle" ] 
@@ -139,12 +132,13 @@ let renderDescription =
                   ]
                 ]
               Html.div [
-                prop.classes ["column"]
+                prop.classes ["column";"centerImage"]
                 prop.children [
                   Html.img [
-                    // prop.classes ["image"; "is-128x128"]
-                    // prop.style [ style.fl "right" ]
-                    // prop.src "laura_tmp.png"
+                    prop.classes [ "centerImage" ]
+                    // prop.style [ style.height 472 ; style.borderRadius 8]
+                    prop.style [ style.height 472 ; style.borderRadius 8 ]
+                    prop.src "laura_magi_cropped.jpg"
                   ]
                 ]
               ]
@@ -189,12 +183,12 @@ let renderBody =
                 // prop.style [ style.backgroundColor "pink"]
                 prop.children [
                   Html.div [
-                    prop.classes ["column"]
+                    prop.classes ["column"; "centerImage"]
                     prop.children [
                       Html.img [
-                        // prop.classes ["image"; "is-128x128"]
-                        // prop.style [ style.fl "right" ]
-                        prop.src "laura_tmp.png"
+                        prop.classes ["centerImage"]
+                        prop.style [ style.height 472 ; style.borderRadius 8]
+                        prop.src "laura_haek2.jpg"
                       ]
                     ]
                   ]
@@ -234,7 +228,7 @@ let render (state: State) (dispatch: Msg -> unit) =
       Html.div [
         prop.classes ["container"]
         prop.children [
-            // renderNavBar
+            renderNavBar
             renderTitle
             renderDescription
             renderBody
