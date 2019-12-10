@@ -46,3 +46,11 @@ html {
     height: 100%;
 }
 
+#titleHero {
+    /* opacity: 30%; */
+    background-image: url("books.png");
+}
+
+.opacityZero {
+    opacity: 100%;
+}

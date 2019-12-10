@@ -3,34 +3,49 @@ module App
 open Elmish
 open Elmish.React
 open Feliz
+open Feliz.Router
 
-type State = None 
+type State = { CurrentUrl : string list }
+type Msg = UrlChanged of string list
 
-type Msg =
-    | Nop
+let init() = { CurrentUrl = [ ] }
 
-let init() = None
-
-let update (msg: Msg) (state: State): State =
-  None
+let update (UrlChanged segments) state =
+    { state with CurrentUrl = segments }
 
 // View
 
 let renderNavBar =
   Html.nav [
-    prop.classes ["navbar"; "is-transparent"; "is-fixed-top"; "is-offset-one-fifth";"container"]
+    prop.classes ["navbar"; "is-transparent"; "is-offset-one-fifth";"container"]
     prop.style [ style.backgroundColor "transparent" ]
     prop.children [
       Html.div [
         prop.classes ["container"]
         prop.children [
-          Html.a [ 
+          Html.a [
             prop.classes ["navbar-item"]
             prop.text "Forside" 
           ]
           Html.a [ 
             prop.classes ["navbar-item"]
             prop.text "Priser og Kontakt" 
+          ]
+          Html.div [
+            prop.classes ["navbar-end"]
+            prop.children [
+              Html.div [ 
+                prop.id "contactEmail"
+                prop.classes ["navbar-item"]
+                prop.text "Email: "
+                prop.children [
+                  Html.a [
+                    prop.href "mailto:akasha-engelsen@gmail.com"
+                    prop.text "akasha-engelsen@gmail.com"
+                  ]
+                ]
+              ]
+            ]
           ]
         ]
       ]
@@ -68,19 +83,24 @@ let renderNavBar2 =
     ]
   ]
 
+  // style="background-color: black; opacity: 20%"
 let renderTitle =
   Html.div [
     prop.classes ["hero"; "is-medium"]
+    // prop.style [ style.backgroundImageUrl "books.png" ] // Opacity 70%
+    prop.style [ style.borderRadius 8 ]
+    prop.id "titleHero"
     prop.children [
       Html.div [
-        // prop.classes ["hero-body"; "center"]
         prop.classes ["hero-body";"textCenter"]
         prop.children [ 
           Html.h1 [
-            prop.style [ style.fontSize 50  ]
+            // prop.classes ["opacityZero"]
+            prop.style [ style.fontSize 50; style.color "white"  ]
             prop.text "Laura Engelsen"
           ]
           Html.h2 [
+            prop.style [ style.color "white"  ]
             prop.text "Akasha vejleder og healer"
           ]
         ]
@@ -222,19 +242,29 @@ let renderBody =
   ]
 
 let render (state: State) (dispatch: Msg -> unit) =
-  Html.div [
-    prop.id "mainDiv"
-    prop.children [
+  let currentPage =
+    match state.CurrentUrl with
+    | [] -> 
       Html.div [
-        prop.classes ["container"]
+        prop.id "mainDiv"
         prop.children [
-            renderNavBar
-            renderTitle
-            renderDescription
-            renderBody
+          Html.div [
+            prop.classes ["container"]
+            prop.children [
+                renderNavBar
+                renderTitle
+                renderDescription
+                renderBody
+            ]
+          ]
         ]
       ]
-    ]
+    | ["kontakt"] ->
+      Html.div []
+
+  Router.router [
+    Router.onUrlChanged (UrlChanged >> dispatch)
+    Router.application currentPage
   ]
 
 
