@@ -25,10 +25,12 @@ let renderNavBar =
         prop.children [
           Html.a [
             prop.classes ["navbar-item"]
+            prop.href (Router.format(""))
             prop.text "Forside" 
           ]
           Html.a [ 
             prop.classes ["navbar-item"]
+            prop.href (Router.format("kontakt"))
             prop.text "Priser og Kontakt" 
           ]
           Html.div [
@@ -241,26 +243,58 @@ let renderBody =
     ]
   ]
 
+let renderContact =
+    Html.div [
+      prop.children [
+        Html.p [
+          prop.text "Jeg fejrer åbningen af min hjemmeside med en fuld skriftlig akasha session til kun 395 kr"
+        ]
+        Html.p [
+          prop.text "I den skriftlige sessionen får du:"
+        ]
+        Html.p [
+          prop.text "En læsning og en clearing af de blokeringer og overbevisninger som ikke længere tjener dit højeste vej og formål og som dukker op i sessionen"
+        ]
+        Html.p [
+          prop.text "En analyse af din sjæl. Hvor den kommer fra, hvilken stråle den er under påvirkning af, hvad er din sjæls kvaliteter og hvad er du kommet her til jorden for at lære"
+        ]
+        Html.p [
+          prop.text "En opfølgning efter 2-4 måneder, hvor jeg tjekker at alt er som det skal være, og om der er kommet nyt op til overfladen, som er klar til at slippe."
+        ]
+        Html.p [
+          prop.text "Kontaktoplysninger:"
+        ]
+        Html.p [
+          prop.text "Send en mail på akasha-engelsen@gmail.com og aftal en tid for sessionen"
+        ]
+        Html.p [
+          prop.text "Til udarbejdelsen skal jeg brude dit fulde navn, fødselsdato og fødeby"
+        ]
+      ]
+    ]
+
+
 let render (state: State) (dispatch: Msg -> unit) =
+  let staticContent = [renderNavBar; renderTitle ]
+  let frontContent =  staticContent @ [ renderDescription; renderBody ]
+  let contactContent = staticContent @ [ renderContact ]
+
+
   let currentPage =
-    match state.CurrentUrl with
-    | [] -> 
+    let shell (content: Fable.React.ReactElement list) = 
       Html.div [
         prop.id "mainDiv"
         prop.children [
           Html.div [
             prop.classes ["container"]
-            prop.children [
-                renderNavBar
-                renderTitle
-                renderDescription
-                renderBody
-            ]
+            prop.children content 
           ]
         ]
       ]
-    | ["kontakt"] ->
-      Html.div []
+    match state.CurrentUrl with
+    | [] -> shell frontContent
+    | ["kontakt"] -> shell contactContent
+    | _ -> Html.h1 "Not found"
 
   Router.router [
     Router.onUrlChanged (UrlChanged >> dispatch)
