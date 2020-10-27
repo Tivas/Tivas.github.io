@@ -1,8 +1,0 @@
-{
-    "appService.zipIgnorePattern": [
-        "node_modules{,/**}",
-        ".vscode{,/**}"
-    ],
-    "appService.defaultWebAppToDeploy": "/subscriptions/2885ddd4-c158-44ce-bd0d-41f0e97771eb/resourceGroups/akasha/providers/Microsoft.Web/sites/akasha-engelsen",
-    "appService.deploySubpath": ""
-}
