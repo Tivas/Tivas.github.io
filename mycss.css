@@ -1,0 +1,82 @@
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.centerImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.cardback {
+    background: #1e5799; /* Old browsers */
+    background: -moz-linear-gradient(45deg,  #1e5799 0%, #207cca 10%, #207cca 23%, #7db9e8 49%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg,  #1e5799 0%,#207cca 10%,#207cca 23%,#7db9e8 49%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg,  #1e5799 0%,#207cca 10%,#207cca 23%,#7db9e8 49%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+body {
+    /* background: #fcecfc; 
+    background: -moz-linear-gradient(-45deg,  #fcecfc 0%, #fd89d7 81%, #ff7cd8 100%);
+    background: -webkit-linear-gradient(-45deg,  #fcecfc 0%,#fd89d7 81%,#ff7cd8 100%);
+    background: linear-gradient(135deg,  #fcecfc 0%,#fd89d7 81%,#ff7cd8 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcecfc', endColorstr='#ff7cd8',GradientType=1 );  */
+
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,207cca+10,207cca+23,7db9e8+49 */
+background: #1e5799; /* Old browsers */
+background: -moz-linear-gradient(45deg,  #1e5799 0%, #207cca 10%, #207cca 23%, #7db9e8 49%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg,  #1e5799 0%,#207cca 10%,#207cca 23%,#7db9e8 49%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg,  #1e5799 0%,#207cca 10%,#207cca 23%,#7db9e8 49%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-size: larger;
+}
+
+#mainDiv {
+   /* background-image: url(spiritual1.jpg); */
+   background-image: url(pendulum_transparant.png);
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-position: right top;
+}
+
+html {
+    height: 100%;
+}
+
+#titleHero {
+    background-color: black;
+    opacity: 0.2;
+    /* background-image: url("bluestones.png"); */
+}
+
+.opacityZero {
+    opacity: 100%;
+}
+
+li {
+    color: black;
+}
+
+a {
+    color: black;
+}
+
+p {
+    color: black;
+}
+
+.fontbold {
+    font-weight: bold;
+}
+
